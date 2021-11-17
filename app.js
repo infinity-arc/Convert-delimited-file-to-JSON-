@@ -1,9 +1,14 @@
 const fs = require('fs');
+const process = require('process');
 
-fs.readFile('src/message.txt', 'utf8', (err, result) => {
+const args = process.argv;
+
+
+fs.readFile(args[2], 'utf8', (err, result) => {
     if (err) {
         console.log(err);
     } else {};
+    console.log(result);
 
 
     const array = result.split(/(?<=.)[\r\n]+(?=.)/u).map((line) => {
@@ -15,7 +20,7 @@ fs.readFile('src/message.txt', 'utf8', (err, result) => {
 
 
     const json = JSON.stringify(array, null, '  ');
-    fs.writeFile('data.json', json, 'utf8', (err) => {
+    fs.writeFile("/converted/" + args[3] + ".json", json, 'utf8', (err) => {
         if (err) {
             console.log(err);
         } else {
