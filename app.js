@@ -20,7 +20,7 @@ fs.readFile(args[2], 'utf8', (err, result) => {
 
 
     const json = JSON.stringify(array, null, '  ');
-    fs.writeFile("/converted/" + args[3] + ".json", json, 'utf8', (err) => {
+    fs.writeFile(args[3] + ".json", json, 'utf8', (err) => {
         if (err) {
             console.log(err);
         } else {
