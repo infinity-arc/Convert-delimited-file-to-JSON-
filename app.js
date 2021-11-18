@@ -1,14 +1,15 @@
-const fs = require('fs');
-const process = require('process');
+import fs from 'fs';
+import process from 'process';
 
 const args = process.argv;
 
 
-fs.readFile(args[2], 'utf8', (err, result) => {
+fs.readFile(document.getElementById('file'), 'utf8', (err, result) => {
     if (err) {
         console.log(err);
     } else {};
     console.log(result);
+
 
 
     const array = result.split(/(?<=.)[\r\n]+(?=.)/u).map((line) => {

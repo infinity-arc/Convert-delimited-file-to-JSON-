@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert to JSON</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header-title">
+        <h1>Convert to JSON</h1>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Input</h2>
+                    <form action="index.php" method="post">
+                        <div class="form-group">
+                            <label for="input"></label>
+                            <input class="form-control" type="file" id="formFileMultiple" multiple />
+                        </div>
+                        <div class="text-center">
+                            <button oncClick="fs.readFile()" type="button" class="btn btn-primary btn-block">Convert</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Output</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="input"></label>
+                                <textarea class="form-control" name="output" id="output" rows="10"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button id="convert_result" onClick="fs.writeFile()" type="submit" class="btn btn-primary btn-block">Download</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="app.js"></script>
+</body>
+
+</html>
